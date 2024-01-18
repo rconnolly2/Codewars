@@ -8,14 +8,14 @@ public class catkata {
         return nueva_array;
     }
 
-    public static void peacefulYard(String[] yard, int minDistance) {
+    public static boolean peacefulYard(String[] yard, int minDistance) {
         int[][] lista_posgatos = new int[3][2];
         int n_gato = 0;
 
         // Creo lista de pos gatos
         for (int i=0; i<=yard.length-1; i++) {
             for (int j=0; j<=yard[0].length()-1; j++) {
-                if (yard[i].charAt(j)=='L') {
+                if (yard[i].charAt(j)=='L' || yard[i].charAt(j)=='R' || yard[i].charAt(j)=='M') {
                     lista_posgatos[n_gato][0] = i;
                     lista_posgatos[n_gato][1] = j;
                     n_gato++;
@@ -23,15 +23,19 @@ public class catkata {
             }
         }
 
-        // Miro si la distancia entre gatos es la menor a la minima
-        for (int i=0; i<=lista_posgatos.length-1; i++) {
-            
+        for (int i=0; i <n_gato; i++) {
+            for (int j = i + 1; j < n_gato; j++) {
+                int x = lista_posgatos[i][0] - lista_posgatos[j][0];
+                int y = lista_posgatos[i][1] - lista_posgatos[j][1];
+                double distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+                if (distance<minDistance) {
+                    return false;
+                }
+            }
         }
-
-
-
+        return true;
     }
     public static void main(String[] args) {
-        peacefulYard(new String[] {"------------", "------------", "-L----------", "------------", "------------", "------------"}, 10);
+        System.out.println(peacefulYard(new String[] {"------------", "------------", "-L----------", "------------", "------------", "------------"}, 10));
     }
 }
