@@ -35,10 +35,4 @@ public class highestscoringword {
         }
         return -1; // si el char no se encuentra - no va a pasar
     }
-
-    public static void main(String[] args) {
-        String inputString = "aaa b";
-        String result = high(inputString);
-        System.out.println("Highest Scoring Word: " + result);
-    }
 }
