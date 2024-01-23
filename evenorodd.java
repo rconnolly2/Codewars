@@ -1,9 +1,9 @@
-public class evenorodd {
-    public static String evenOrOdd(int number) {
-        if (number%2==0) {
-            return "Even";
-        } else {
-            return "Odd";
-        }
+public class WideMouthedFrog{
+    public static String mouthSize(String animal){
+       if (animal.compareToIgnoreCase("alligator")==0) {
+         return "small";
+       } else {
+         return "wide";
+       }
     }
-}
+  }
