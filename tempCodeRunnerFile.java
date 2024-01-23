@@ -1,1 +1,1 @@
-Long.parseLong
+resultado
