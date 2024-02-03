@@ -17,7 +17,7 @@ public class numberexp {
             pos_num--;
         }
 
-        return resultado.toString();
+        return resultado.toString().t;
     }
 
     public static void main(String[] args) {
