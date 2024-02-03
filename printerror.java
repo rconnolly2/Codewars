@@ -19,7 +19,15 @@ public class printerror {
         
       }
 
+      static String greet(String name, String owner) {
+        if (name==owner) {
+          return "Hello boss";
+        } else {
+          return "Hello guest";
+        }
+    }
+
       public static void main(String[] args) {
-        printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz");
+        System.out.println(greet("George", "George"));
       }
 }
